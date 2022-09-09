@@ -22,5 +22,7 @@ setuptools.setup(
     name='may_browse',
     version="0.1.0dev",
     packages=['may_browse'],
+    author="crazy-catzzz",
+    license="AGPLv3",
     install_requires=install_requires
 )
