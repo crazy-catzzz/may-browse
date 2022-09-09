@@ -13,9 +13,20 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import setuptools
+from PyQt5.QtWidgets import QApplication
+import os
+import sys
+import window
 
-with open('requirements.txt', 'r') as f:
-    install_requires = f.read().splitlines()
+def main():
+    app = QApplication(sys.argv)
+    app.setApplicationName("may-browse")
+    win = window.Window()
 
-setuptools.setup(name='may_browse', packages=['may_browse'], install_requires=install_requires)
+    win.createTab()
+    win.switchTab(0)
+
+    app.exec_()
+
+if __name__ == "__main__":
+    main()

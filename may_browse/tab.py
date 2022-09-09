@@ -13,9 +13,16 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import setuptools
+from PyQt5 import *
+from PyQt5.QtCore import QUrl
+from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWebEngineWidgets import QWebEngineView
 
-with open('requirements.txt', 'r') as f:
-    install_requires = f.read().splitlines()
+class Tab(QWidget):
+    def __init__(self, url):
+        super(Tab, self).__init__()
+        self.view = QWebEngineView()
+        self.url(url)
 
-setuptools.setup(name='may_browse', packages=['may_browse'], install_requires=install_requires)
+    def url(self, url):
+        self.view.load(QUrl(url))

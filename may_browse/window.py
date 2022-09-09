@@ -13,9 +13,22 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import setuptools
+from PyQt5 import *
+from PyQt5.QtWidgets import QMainWindow, QStackedWidget
+import tab
 
-with open('requirements.txt', 'r') as f:
-    install_requires = f.read().splitlines()
+class Window(QMainWindow):
+    def __init__(self, *args, **kwargs):
+        super(Window, self).__init__(*args, **kwargs)
+        self.show()
+        self.central = QStackedWidget()
+        self.setCentralWidget(self.central)
+    tabs = []
+    currentTab = None
 
-setuptools.setup(name='may_browse', packages=['may_browse'], install_requires=install_requires)
+    def createTab(self):
+        self.tabs.append(tab.Tab("http://www.google.com"))
+        self.central.addWidget(self.tabs[-1].view)
+
+    def switchTab(self, index):
+        self.central.setCurrentIndex(index)
