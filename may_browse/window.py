@@ -24,11 +24,12 @@ class Window(QMainWindow):
         self.central = QStackedWidget()
         self.setCentralWidget(self.central)
     tabs = []
-    currentTab = None
+    currentTab = 0
 
     def createTab(self):
         self.tabs.append(tab.Tab("http://www.google.com"))
         self.central.addWidget(self.tabs[-1].view)
 
     def switchTab(self, index):
+        self.currentTab = index
         self.central.setCurrentIndex(index)
