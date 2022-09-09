@@ -26,6 +26,10 @@ def main():
     win.createTab()
     win.switchTab(0)
 
+    #win.createTab()
+    #win.switchTab(1)
+    #win.tabs[win.currentTab].url("http://www.youtube.com")
+
     app.exec_()
 
 if __name__ == "__main__":
