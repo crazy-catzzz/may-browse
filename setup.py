@@ -19,7 +19,8 @@ with open('requirements.txt', 'r') as f:
     install_requires = f.read().splitlines()
 
 setuptools.setup(
-    name='may_browse', 
-    packages=['may_browse'], 
+    name='may_browse',
+    version="0.1.0dev",
+    packages=['may_browse'],
     install_requires=install_requires
 )
