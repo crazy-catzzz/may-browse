@@ -25,6 +25,10 @@ class Window(QMainWindow):
         self.show()
         self.central = QStackedWidget()
         self.setCentralWidget(self.central)
+        self.setMinimumSize(self.width, self.height)
+    width = 1280
+    height = 720
+
     tabs = []
     currentTab = 0
 
