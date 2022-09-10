@@ -33,3 +33,6 @@ def execute(argv):
     #win.tabs[win.currentTab].url("http://www.youtube.com")
 
     app.exec_()
+
+if __name__ == "__main__":
+    execute(sys.argv[1:])
