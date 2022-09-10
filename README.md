@@ -16,4 +16,3 @@ $ pip install .
 
 ## TODO
 - Add proper GUI
-- Create wrapper run script
