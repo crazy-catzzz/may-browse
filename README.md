@@ -14,10 +14,6 @@ $ cd may-browse
 $ pip install .
 ```
 
-You'll find your install in `~/.local/lib/python3.10/site-packages/may_browse` if you're using Linux and in `C:\Python310\Lib\site-packages\may_browse` if you're using Windows.
-
-To run it, run `python3 ~/.local/lib/python3.10/site-packages/may_browse/app.py` on Linux or `python C:\Python310\lib\site-packages\may_browse\app.py` on Windows.
-
 ## TODO
 - Add proper GUI
 - Create wrapper run script
