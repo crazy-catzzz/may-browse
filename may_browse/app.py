@@ -18,9 +18,9 @@
 from PyQt5.QtWidgets import QApplication
 import os
 import sys
-import window
+from may_browse import window
 
-def main():
+def execute(argv):
     app = QApplication(sys.argv)
     app.setApplicationName("may-browse")
     win = window.Window()
@@ -33,6 +33,3 @@ def main():
     #win.tabs[win.currentTab].url("http://www.youtube.com")
 
     app.exec_()
-
-if __name__ == "__main__":
-    main()

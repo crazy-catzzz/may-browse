@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 #    Copyright (C) 2022  crazy-catzzz
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -15,23 +13,10 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from PyQt5 import *
-from PyQt5.QtWidgets import QMainWindow, QStackedWidget
-from may_browse import tab
+# This is the main entry point
 
-class Window(QMainWindow):
-    def __init__(self, *args, **kwargs):
-        super(Window, self).__init__(*args, **kwargs)
-        self.show()
-        self.central = QStackedWidget()
-        self.setCentralWidget(self.central)
-    tabs = []
-    currentTab = 0
+import sys
+from may_browse import app
 
-    def createTab(self):
-        self.tabs.append(tab.Tab("http://www.google.com"))
-        self.central.addWidget(self.tabs[-1].view)
-
-    def switchTab(self, index):
-        self.currentTab = index
-        self.central.setCurrentIndex(index)
+def main():
+    app.execute(sys.argv[1:])

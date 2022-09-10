@@ -26,5 +26,10 @@ setuptools.setup(
     packages=['may_browse'],
     author="crazy-catzzz",
     license="AGPLv3",
-    install_requires=install_requires
+    install_requires=install_requires,
+    entry_points={
+        'console_scripts': [
+            'may-browse=may_browse.maybrowse:main',
+        ]
+    }
 )

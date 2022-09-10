@@ -15,23 +15,8 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from PyQt5 import *
-from PyQt5.QtWidgets import QMainWindow, QStackedWidget
-from may_browse import tab
+import sys
+import may_browse
 
-class Window(QMainWindow):
-    def __init__(self, *args, **kwargs):
-        super(Window, self).__init__(*args, **kwargs)
-        self.show()
-        self.central = QStackedWidget()
-        self.setCentralWidget(self.central)
-    tabs = []
-    currentTab = 0
-
-    def createTab(self):
-        self.tabs.append(tab.Tab("http://www.google.com"))
-        self.central.addWidget(self.tabs[-1].view)
-
-    def switchTab(self, index):
-        self.currentTab = index
-        self.central.setCurrentIndex(index)
+if __name__ == "__main__":
+    sys.exit(may_browse.may_browse.main())
