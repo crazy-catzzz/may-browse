@@ -28,7 +28,7 @@ setuptools.setup(
     license="AGPLv3",
     install_requires=install_requires,
     entry_points={
-        'console_scripts': [
+        'gui_scripts': [
             'may-browse=may_browse.maybrowse:main',
         ]
     }
